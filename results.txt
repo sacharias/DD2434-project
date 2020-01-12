@@ -1,0 +1,147 @@
+Results (100 iterations)
+
+
+Iris
+(removed class 0, test class 1 and 2)
+
+==================================================
+    
+10% label
+    
+    model: linear
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 10 70 20
+    perc_label: 0.1
+    kwargs: {'k': 2}
+    sigma: 1
+    c: 10
+    error: 0.1305 (0.09052)
+    
+    model: step
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 10 70 20
+    perc_label: 0.1
+    kwargs: {'k': 2}
+    sigma: 1
+    c: 10
+    error: 0.15 (0.08)
+    
+    model: linear_step
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 10 70 20
+    perc_label: 0.1
+    kwargs: {'k': 2}
+    sigma: 1
+    c: 10
+    error: 0.1525 (0.07918)
+    
+    model: polynomial
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 10 70 20
+    perc_label: 0.1
+    kwargs: {'t': 2}
+    sigma: 1
+    c: 10
+    error: 0.1455 (0.1027)
+    
+20% label
+    
+    model: linear
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 20 60 20
+    perc_label: 0.2
+    kwargs: {}
+    sigma: 1
+    c: 10
+    error: 0.0935 (0.0639)
+    
+    model: step
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 20 60 20
+    perc_label: 0.2
+    kwargs: {'k': 2, 't': 2}
+    sigma: 1
+    c: 10
+    error: 0.1435 (0.06733)
+    
+    model: linear_step
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 20 60 20
+    perc_label: 0.2
+    kwargs: {'k': 2, 't': 2}
+    sigma: 1
+    c: 10
+    error: 0.1445 (0.06741)
+    
+    model: polynomial
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 20 60 20
+    perc_label: 0.2
+    kwargs: {'k': 2, 't': 2}
+    sigma: 1
+    c: 10
+    error: 0.0995 (0.06652)
+    
+40% label
+
+    model: linear
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 40 40 20
+    perc_label: 0.4
+    kwargs: {'k': 2, 't': 2}
+    sigma: 1
+    c: 10
+    error: 0.073 (0.0512)
+    
+    model: step
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 40 40 20
+    perc_label: 0.4
+    kwargs: {'k': 2, 't': 2}
+    sigma: 1
+    c: 10
+    error: 0.1465 (0.06413)
+    
+    model: step
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 40 40 20
+    perc_label: 0.4
+    kwargs: {'k': 2, 't': 2}
+    sigma: 1
+    c: 1
+    error: 0.142 (0.06735)
+    
+    model: linear_step
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 40 40 20
+    perc_label: 0.4
+    kwargs: {'k': 2, 't': 2}
+    sigma: 1
+    c: 1
+    error: 0.142 (0.06772)
+    
+    model: polynomial
+    data: iris (all features)
+    datapoints: 100
+    datapoints (label/unlabel/val): 40 40 20
+    perc_label: 0.4
+    kwargs: {'k': 2, 't': 2}
+    sigma: 1
+    c: 1
+    error: 0.0725 (0.05019)
+    
+    
+    
+    
