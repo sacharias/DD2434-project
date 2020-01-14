@@ -43,7 +43,7 @@ def load_digits_data(train_size, test_size, unlabel_size):
 
 #%%
 
-
+# Add stratify check
 def load_ft_data(train_size, test_size, unlabel_size):
     x_train = np.load('../Embeddings/x_train_trans_FT.npy')
     x_test = np.load('../Embeddings/x_test_trans_FT.npy')
@@ -72,24 +72,31 @@ def load_ft_data(train_size, test_size, unlabel_size):
     x_test = x_test[y_test != 'unknown']
     y_test = y_test[y_test != 'unknown']
 
-    idx = np.arange(x_train.shape[0])
-    np.random.shuffle(idx)
-    x_train = x_train[idx].astype(np.float)
-    y_train = y_train[idx].astype(np.float)
+    stratified = False
 
-    x_train = x_train[:train_size]
-    y_train = y_train[:train_size]
-    
+    while not stratified:
+        idx = np.arange(x_train.shape[0])
+        np.random.shuffle(idx)
+        x_train2 = x_train[idx].astype(np.float)
+        y_train2 = y_train[idx].astype(np.float)
+
+        x_train2 = x_train2[:train_size]
+        y_train2 = y_train2[:train_size]
+        
+        x_unl = x_train2[train_size : unlabel_size + train_size].astype(np.float)
+        y_unl = y_train2[train_size : unlabel_size + train_size].astype(np.float)
+
+        if y_train2[y_train2 == 0.0].shape[0] > 0 and y_train2[y_train2 == 1.0].shape[0] > 0:
+            stratified = True
+
     x_test = x_test[:test_size].astype(np.float)
     y_test = y_test[:test_size].astype(np.float)
 
-    x_unl = x_train[train_size : unlabel_size + train_size].astype(np.float)
-    y_unl = y_train[train_size : unlabel_size + train_size].astype(np.float)
-
-    return x_train, x_test, x_unl, y_train, y_test, y_unl
+    return x_train2, x_test, x_unl, y_train2, y_test, y_unl
 
 
 
-# load_ft_data(10, 10, 10)
+
+# load_ft_data(2, 40, 120 - 2);
 
 # %%
