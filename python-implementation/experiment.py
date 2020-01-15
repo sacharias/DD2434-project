@@ -100,8 +100,8 @@ def run_experiment(train_size, test_size, unlabel_size, tf_fun):
     C = 10
     # train_size, test_size, unlabel_size = 40, 200, 200
 
-    # X_train, X_test, X_unlabel, Y_train, Y_test, Y_unlabel = load_digits_data(train_size, test_size, unlabel_size)
-    X_train, X_test, X_unlabel, Y_train, Y_test, Y_unlabel = load_ft_data(train_size, test_size, unlabel_size)
+    X_train, X_test, X_unlabel, Y_train, Y_test, Y_unlabel = load_digits_data(train_size, test_size, unlabel_size)
+    # X_train, X_test, X_unlabel, Y_train, Y_test, Y_unlabel = load_ft_data(train_size, test_size, unlabel_size)
     K = make_kernel(X_train, X_test, X_unlabel, tf_fun, kwargs)
     
     n_train, n_test = X_train.shape[0], X_test.shape[0]
@@ -156,12 +156,12 @@ def plot(data, labeled, tfs, all_std):
 
     
     plt.legend(tfs)
-    plt.title("fastText Vectors")
+    plt.title("MNIST")
     plt.xlabel("Nb of labeled points")
     plt.ylabel("Test error")
     plt.xticks(labeled, labeled)
     # plt.show()
-    plt.savefig("tf_results_t=3_k=2_low_alpha", bbox_inches="tight")
+    plt.savefig("tf_results_mnist_1", bbox_inches="tight")
 
 print(np.array(all_errors))
 print(np.array(all_std))
